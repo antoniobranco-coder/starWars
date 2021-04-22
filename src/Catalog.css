@@ -1,0 +1,131 @@
+.charactersArea{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.title{
+    margin-bottom: 20px;
+    font-family:fantasy;
+    font-size: 40px;
+}
+
+.listOfMovies{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.charactersList{
+  width: 450px; 
+  height: 90px; 
+  padding-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(209, 169, 57);
+  border-radius:10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: 60px;
+}
+
+.characters{
+    color:white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.buttonLoadMore{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 450px;
+    height: 50px;
+    border-style: none;
+    color: white;
+    background-color: wheat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 27px;
+}
+
+button:hover{
+    cursor:pointer
+}
+
+.mainCard{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    font-family:'Arial Narrow',Impact, Haettenschweiler, sans-serif;
+}
+
+.name{
+    font-size: 35px;
+    text-align: left;
+}
+
+.charactersFeatures{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.charactersData{
+    padding-top: 20px;
+    height: 50px;
+    width: 400px;
+    font-size: 18px;
+    border-width: 2px;
+    border-color: black;
+    border-style:outset;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.titleMovies{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.moviesBox{
+    width: 550px;
+    border-style: solid;
+    border-width: 2px;
+}
+li{
+    height: 30px;
+    text-align: left;
+    padding-left: -10px;
+    font-size: 18px;
+    padding-top: 8px;
+    
+}
+
+.backHomeLink{
+    text-align: center;
+    background-color: wheat;
+    width: 450px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 10px;
+    margin-top: 40px;
+}
+
+
+
+
+
