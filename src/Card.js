@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
+import Title from './Title'
 import './Catalog.css'
 
 const Card = () => {
     const [card, setCard] = useState({});
-    const [filmsTitle, setFilmsTitle] = useState([])
 
     const { id } = useParams();
 
@@ -17,24 +17,11 @@ const Card = () => {
                 return response.json()
             })
             .then(data => {
-                console.log(data.films)
+                console.log(data)
                 setCard(data)
-                let films = data.films
-                let filmsTitleVariable = []
-                films.map((film) => {
-                    fetch(`${film}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            filmsTitleVariable.push(data.title)
-                        }
-                        )
-                })
-                console.log(filmsTitleVariable)
-                setFilmsTitle(filmsTitleVariable)
             })
-    }, filmsTitle)
+    }, card)
 
-    console.log(filmsTitle)
     console.log(card)
     return (
         <div className='mainCard'>
@@ -45,12 +32,20 @@ const Card = () => {
                 <p className='charactersData'>Hair Color: {card.hair_color}</p>
                 <p className='charactersData'>Birth Date: {card.birth_year}</p>
             </div>
-            <p className='titleMovies'>{card.name} performed in the following {filmsTitle !== [] && filmsTitle.length} {filmsTitle && filmsTitle.length === 1 ? 'film' : 'films'}</p>
-            <ul className='moviesBox'>
-                {
-                    filmsTitle !== [] && filmsTitle.map((element) => <li>{element}</li>)
-                }
-            </ul>
+            {/* <p className='titleMovies'>{card.name} performed in the following {filmsTitle !== [] && filmsTitle.length} {filmsTitle && filmsTitle.length === 1 ? 'film' : 'films'}</p> */}
+
+            <p className='titleMovies'>{card.name} performed in the following {card.films && card.films.length} {card.films && card.films.length > 1 ? 'movies' : 'movie'}</p>
+
+            {
+                card.films && card.films.length > 0 && card.films.map((film) => {
+                    return (
+                        <Title
+                            filmLink={film}
+                        />
+                    )
+                })
+            }
+
             <Link data-cy='link-back-home' className='backHomeLink' to='/'>
                 Back to Home
             </Link>
